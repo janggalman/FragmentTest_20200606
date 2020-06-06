@@ -2,7 +2,7 @@ package kr.tjoeun.fragmenttest_20200606.datas
 
 import java.io.Serializable
 
-class Student (inputName : String, iby : Int , gender : String) : Serializable {
+class Student (inputName : String, iby : Int , gender : Boolean) : Serializable {
 
     val name = inputName
     val birthYear = iby
