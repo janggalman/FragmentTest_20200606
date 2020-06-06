@@ -1,6 +1,5 @@
 package kr.tjoeun.fragmenttest_20200606.fragments
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,12 +23,6 @@ class SecondFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_second , container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
         students.add(Student("조경진", 1988, true))
         students.add(Student("김광철", 1966, true))
         students.add(Student("김재환", 1993, true))
@@ -39,8 +32,16 @@ class SecondFragment : Fragment() {
         students.add(Student("이승원", 1978, true))
         students.add(Student("이현호", 1981, true))
 
-        studentAdapter = StudentAdapter(Activity , R.layout.student_list_item, students)
+        //studentAdapter = StudentAdapter(activity , R.layout.student_list_item, students)
 
         studentListView.adapter =studentAdapter
+
+        return inflater.inflate(R.layout.fragment_second , container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+
     }
 }

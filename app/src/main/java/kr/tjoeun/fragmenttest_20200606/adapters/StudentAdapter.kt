@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import kr.tjoeun.fragmenttest_20200606.R
 import kr.tjoeun.fragmenttest_20200606.R.id
 import kr.tjoeun.fragmenttest_20200606.R.layout
 import kr.tjoeun.fragmenttest_20200606.datas.Student
@@ -21,10 +22,18 @@ class StudentAdapter(context: Context, resId: Int, list: Array<Student> ) : Arra
 //        어떤 모양일지만 먼저 결정 (뼈대 작업)
 //        그 모양에 어떤 값을 적어줄지 결정(실제 데이터 출력 작업)
         var tempRow = convertView
-        if (tempRow == null) {
-            tempRow = inf.inflate(layout.student_list_item, null)
-        }
 
+        //null처리
+        tempRow?.let {
+            //null 이 아닌 경우
+        }.let {
+            //null 인경우
+            tempRow = inf.inflate(R.layout.student_list_item, null)
+        }
+// old
+//        if (tempRow == null) {
+//            tempRow = inf.inflate(layout.student_list_item, null)
+//        }
         val row = tempRow!!
 
 //        리턴해주기 전에 필요한 데이터를 셋팅하고 리턴하도록.
