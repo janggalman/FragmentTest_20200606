@@ -11,7 +11,7 @@ import kr.tjoeun.fragmenttest_20200606.R.id
 import kr.tjoeun.fragmenttest_20200606.R.layout
 import kr.tjoeun.fragmenttest_20200606.datas.Student
 
-class StudentAdapter(context: Context, resId: Int, list: Array<Student> ) : ArrayAdapter<Student>(context , resId, list) {
+class StudentAdapter(context: Context, resId: Int, list: List<Student> ) : ArrayAdapter<Student>(context , resId, list) {
     val mContext = context
     val mList = list
     val inf = LayoutInflater.from (mContext)
