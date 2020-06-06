@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_first.*
 import kr.tjoeun.fragmenttest_20200606.R
 
-class FirstFragment : Fragment() {
+class FirstFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +24,13 @@ class FirstFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        setupEvents()
+        setValues()
+    }
+
+
+    override fun setupEvents() {
+
         telBtn.setOnClickListener {
             val inputPhoneNum = telEdt.text.toString()
 
@@ -33,6 +40,10 @@ class FirstFragment : Fragment() {
             val myIntent = Intent(Intent.ACTION_DIAL , myUri)
             startActivity(myIntent)
         }
+
     }
 
+    override fun setValues() {
+
+    }
 }

@@ -12,7 +12,7 @@ import kr.tjoeun.fragmenttest_20200606.adapters.StudentAdapter
 import kr.tjoeun.fragmenttest_20200606.datas.Student
 import kotlin.collections.ArrayList
 
-class SecondFragment : Fragment() {
+class SecondFragment : BaseFragment() {
 
     val studentList = ArrayList<Student>()
     // onCreate 실행된 이후에 내용을 채워야함.
@@ -31,6 +31,17 @@ class SecondFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        setupEvents()
+        setValues()
+
+
+    }
+    override fun setupEvents() {
+
+    }
+
+    override fun setValues() {
+
         studentList.add(Student("조경진", 1988, true))
         studentList.add(Student("김광철", 1966, true))
         studentList.add(Student("김재환", 1993, true))
@@ -40,9 +51,12 @@ class SecondFragment : Fragment() {
         studentList.add(Student("이승원", 1978, true))
         studentList.add(Student("이현호", 1981, true))
 
+        //activity를 컨텍스트 타입으로 변환
         studentAdapter = StudentAdapter(activity as Context , R.layout.student_list_item, studentList)
 
         studentListView.adapter =studentAdapter
 
     }
+
+
 }
