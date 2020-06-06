@@ -52,7 +52,7 @@ class SecondFragment : BaseFragment() {
         studentList.add(Student("이현호", 1981, true))
 
         //activity를 컨텍스트 타입으로 변환
-        studentAdapter = StudentAdapter(activity as Context , R.layout.student_list_item, studentList)
+        studentAdapter = StudentAdapter(mContext , R.layout.student_list_item, studentList)
 
         studentListView.adapter =studentAdapter
 
